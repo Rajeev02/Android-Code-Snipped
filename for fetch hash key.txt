@@ -1,0 +1,21 @@
+  try{
+            PackageInfo info = getPackageManager().getPackageInfo("com.example.rajeev.facebooklogin", PackageManager.GET_SIGNATURES);
+            for(Signature signature:info.signatures)
+            {
+                MessageDigest messageDigest = MessageDigest.getInstance("SHA");
+                messageDigest.update(signature.toByteArray());
+                Log.d("KeyHash : ", Base64.encodeToString(messageDigest.digest(),Base64.DEFAULT));
+            }
+        }
+        catch (PackageManager.NameNotFoundException e)
+        {
+
+        }
+        catch (NoSuchAlgorithmException e)
+        {
+            e.printStackTrace();
+        }
+
+
+
+9YkcvDWM1+Ngpfi52A+uf1WxU8I=
