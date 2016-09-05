@@ -1,0 +1,9 @@
+Fragment to Fragment 
+GoogleMapFragment gmf = new GoogleMapFragment();
+ getFragmentManager().beginTransaction().replace(R.id.fragment,gmf,gmf.getTag()).commit();
+          
+Fragment Activity to Fragment
+AddPlaceFragment apf = new AddPlaceFragment();
+FragmentManager manager=getSupportFragmentManager();
+manager.beginTransaction().replace(R.id.fragment,apf,apf.getTag()).commit();
+     
