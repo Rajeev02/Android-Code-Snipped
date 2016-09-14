@@ -1,0 +1,6 @@
+
+            // Handle share option
+            Intent sharingIntent = new Intent(Intent.ACTION_SEND);
+            sharingIntent.setType("text/html");
+            sharingIntent.putExtra(Intent.EXTRA_TEXT, Html.fromHtml("<p>My Application Application.</p>"));
+            startActivity(Intent.createChooser(sharingIntent,"Share Via"));
