@@ -1,0 +1,13 @@
+// Handle send options
+            Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
+            emailIntent.setData(Uri.parse("mailto:"+"rajeevjoshi91@gmail.com"));
+            emailIntent.putExtra(Intent.EXTRA_SUBJECT, "My APPLICATION");
+            emailIntent.putExtra(Intent.EXTRA_TEXT,"You can write here your Feedback / complain ");
+            try{
+                startActivity(new Intent(this,HomeActivity.class));
+                startActivity(Intent.createChooser(emailIntent,"Send email using ...."));
+            }
+            catch (android.content.ActivityNotFoundException ex)
+            {
+                Toast.makeText(HomeActivity.this, "No email clients installed.", Toast.LENGTH_SHORT).show();
+            }
