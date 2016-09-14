@@ -1,0 +1,52 @@
+=============================================================================================
+<![CDATA[ ...raw html... ]]>
+Example:
+
+<string name="nice_html">
+<![CDATA[
+<p>This is a html-formatted string with <b>bold</b> and <i>italic</i> text</p>
+<p>This is another paragraph of the same string.</p>
+]]>
+</string>
+Then, in your code:
+
+TextView foo = (TextView)findViewById(R.id.foo);
+foo.setText(Html.fromHtml(getString(R.string.nice_html)));
+=============================================================================================
+
+http://stackoverflow.com/questions/3235131/set-textview-text-from-html-formatted-string-resource-in-xml
+=============================================================================================
+
+setText(Html.fromHtml(getText().toString()));
+  
+=============================================================================================
+strings.xml:
+<string name="sample_string"><![CDATA[<h2>Title</h2><br><p>Description here</p>]]></string>
+...
+
+MainActivity.java:
+text.setText(Html.fromHtml(getString(R.string.sample_string));
+	
+The best approach to use CData sections for the string in strings.xml file to get a actual display of the html content to the TextView the below code snippet will give you the fair idea.
+
+============================================================================================
+=============================================================================================
+http://stacktips.com/tutorials/android/display-html-in-android-textview
+
+
+[box style=”4?]
+
+<a href=”…”> <b>,  <big>, <blockquote>, <br>, <cite>, <dfn>
+<div align=”…”>,  <em>, <font size=”…” color=”…” face=”…”>
+<h1>,  <h2>, <h3>, <h4>,  <h5>, <h6>
+<i>,  <img src=”…”>,  <p>, <small>
+<strike>,  <strong>, <sub>, <sup>, <tt>, <u>[/box]
+
+
+=============================================================================================
+myTextView.setText(Html.fromHtml("<h2>Title</h2><br><p>Description here</p>"));
+=============================================================================================
+<resource>
+    <string name="your_string">This is an <u>underline</u> text demo for TextView.</string>
+</resources>
+=============================================================================================
