@@ -1,0 +1,17 @@
+
+        } else if (id == R.id.nav_share) {
+
+            Intent sharingIntent = new Intent(Intent.ACTION_SEND);
+            sharingIntent.setType("text/html");
+            sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, Html.fromHtml
+                    ("<p>Write your feedback.</p>"));
+            startActivity(Intent.createChooser(sharingIntent, "Share using"));
+
+        } else if (id == R.id.nav_send) {
+            Intent sendIntent = new Intent();
+            sendIntent.setAction(Intent.ACTION_SEND);
+            sendIntent.putExtra(Intent.EXTRA_TEXT, "Passion Android Application.");
+            sendIntent.setType("text/plain");
+            startActivity(Intent.createChooser(sendIntent, getResources().getText(R.string.send_to)));
+
+        }
