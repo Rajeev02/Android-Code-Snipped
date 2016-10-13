@@ -6,4 +6,11 @@ Fragment Activity to Fragment
 AddPlaceFragment apf = new AddPlaceFragment();
 FragmentManager manager=getSupportFragmentManager();
 manager.beginTransaction().replace(R.id.fragment,apf,apf.getTag()).commit();
+
+
+Fragment to Activity
+
+Intent i = new Intent(getActivity(), MainActivity.class);
+startActivity(i);
+
      
