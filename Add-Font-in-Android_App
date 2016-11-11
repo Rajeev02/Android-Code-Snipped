@@ -1,0 +1,13 @@
+ /** object for typeface */
+            typeface = Typeface.createFromAsset(getAssets(), "fonts/mediumfont.ttf");
+           
+    
+            TextView txt1 = new TextView(this);
+            final RelativeLayout.LayoutParams text1Params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.MATCH_PARENT);
+            txt1.setText("TypeFace");
+            txt1.setTextColor(Color.WHITE);
+            
+            txt1.setTypeface(typeface);
+            
+            MyMainView.addView(txt1, text1Params);
+           
