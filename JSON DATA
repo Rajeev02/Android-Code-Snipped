@@ -1,0 +1,16 @@
+-----------------------------------------------------------------------
+{"user" : {"status" : {"stat1" : "54", "stats2" : "87"}}}
+-----------------------------------------------------------------------
+JSONObject json = getJSONfromURL(URL);
+JSONObject user = json.getJSONObject("user");
+JSONObject status = user.getJSONObject("status");
+int stat1 = status.getInt("stat1");
+-----------------------------------------------------------------------
+JSONObject mJsonObject = new JSONObject(response);
+JSONObject userJObject = mJsonObject.getJSONObject("user");
+JSONObject statusJObject = userJObject.getJSONObject("status");
+String stat1 = statusJObject.getInt("stat1");
+String stats2 = statusJObject.getInt("stats2");
+-----------------------------------------------------------------------
+http://stackoverflow.com/questions/11781075/jsonobject-in-jsonobject
+-----------------------------------------------------------------------
