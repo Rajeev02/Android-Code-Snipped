@@ -1,0 +1,18 @@
+------------------------------------------------------------------------------------------------------------------------
+[{"name":"name1","url":"url1"},{"name":"name2","url":"url2"},...]
+------------------------------------------------------------------------------------------------------------------------
+JSONArray jsonarray = new JSONArray(jsonStr);
+for (int i = 0; i < jsonarray.length(); i++) {
+    JSONObject jsonobject = jsonarray.getJSONObject(i);
+    String name = jsonobject.getString("name");
+    String url = jsonobject.getString("url");
+}
+------------------------------------------------------------------------------------------------------------------------
+int jsonLength = Integer.parseInt(jsonObject.getString("number_of_messages"));
+            if (jsonLength != 1) {
+                for (int i = 0; i < jsonLength; i++) {
+                    JSONArray jsonArray = new JSONArray(jsonObject.getString("messages"));
+                    JSONObject resJson = (JSONObject) jsonArray.get(i);
+                    //addItem(resJson.getString("message"), resJson.getString("name"), resJson.getString("created_at"));
+                }
+------------------------------------------------------------------------------------------------------------------------
