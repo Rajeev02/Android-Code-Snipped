@@ -1,0 +1,25 @@
+private void clear() {
+        *//**//** Delete or remove all the views inside Parent View LL *//**//*
+        for(int i = 0 ; i < scrollContainerView.getChildCount() ; i++)
+        {
+            View v = scrollContainerView.getChildAt(i);
+            if(v instanceof  LinearLayout) {
+                // ((LinearLayout) v).removeAllViews();
+
+
+                // ((ViewGroup)nx.nxIcon.getParent()).removeView(nx.nxIcon);
+            }
+        }
+       scrollContainerView.removeAllViews();
+
+       for (int i = 0; i < nxr.size(); i++ ) {
+            if (nxr.get(i).nxIcon != null ) {
+                if (((ViewGroup) nxr.get(i).nxIcon.getParent()) != null ) {
+                    ((ViewGroup) nxr.get(i).nxIcon.getParent()).removeView(nxr.get(i).nxIcon);
+                }
+            }
+        }
+
+        // for loop for the nxr
+        //
+    }
