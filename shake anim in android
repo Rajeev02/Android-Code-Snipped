@@ -1,0 +1,58 @@
+
+    private void shake(boolean b) {
+            Logger.print("Shake is been fired with " + b);
+
+            int item = scrollContainerView.getChildCount();
+            try {
+                for (int i = 0; i < item; i++) {
+                    PXLinearLayout nxCardView = (PXLinearLayout) scrollContainerView.getChildAt(i);
+                    for (int j = 0; j < nxCardView.getChildCount(); j++) {
+                        View nxIconView = nxCardView.getChildAt(0);
+                        final Animation animShake = AnimationUtils.loadAnimation(this, R.anim.shake);
+                        if(b == true) {
+                            isShake = true;
+                            nxIconView.startAnimation(animShake);
+                            nxIconView.clearAnimation();
+                            View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(nxIconView);
+                            nxIconView.startDrag(null, shadowBuilder, CardView, 0);
+                            nxIconView.setOnDragListener(this);
+
+
+                        }
+                        else {
+                            Logger.print("cancel shake");
+                            nxIconView.clearAnimation();
+                            isShake = false;
+                        }
+
+
+                        // View nxIconView2 = nxCardView.getChildAt(j);
+                        // View nxIconView3 = nxCardView.getChildAt(j);
+
+//                    View nxIconView = (NXIcon) nxCardView.getChildAt(j);
+//                    TranslateAnimation animation = new TranslateAnimation(0, -25, 0, 0);
+//                    nxIconView.startAnimation(animation);
+                    }
+                }
+            } catch (Exception e) {
+                Logger.print("Shake Excption : " + e);
+            }
+    }
+    
+ shake.xml
+ 
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <rotate
+        android:fromDegrees="-5"
+        android:duration ="100"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:repeatCount="infinite"
+        android:repeatMode  = "reverse"
+        android:toDegrees="5"
+
+        />
+</set>
