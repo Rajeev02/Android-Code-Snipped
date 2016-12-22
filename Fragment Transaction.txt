@@ -1,4 +1,18 @@
 ------------------------------------------------------------------------------  
+Activity to Fragment
+        Fragment fragment = new YourFragment();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.output1, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
+ 
+        or
+        
+        MyFragment1 fragmentS1 = new MyFragment1();
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, fragmentS1).commit();
+
+------------------------------------------------------------------------------  
 From RecyclerViewHolder to Activity
 Intent intent =  new Intent(v.getContext(), AssestDetailView.class);
                     v.getContext().startActivity(intent);
