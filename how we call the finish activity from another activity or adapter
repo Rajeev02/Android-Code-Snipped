@@ -1,0 +1,4 @@
+ PreviousActivity activity = (PreviousActivity) context;
+                if (activity != null) {
+                    activity.finish();
+                }
