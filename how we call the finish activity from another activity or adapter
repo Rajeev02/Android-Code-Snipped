@@ -1,4 +1,5 @@
- PreviousActivity activity = (PreviousActivity) context;
+# how we call the finish activity from another activity or adapter
+PreviousActivity activity = (PreviousActivity) context;
                 if (activity != null) {
                     activity.finish();
                 }
