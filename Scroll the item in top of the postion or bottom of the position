@@ -1,0 +1,9 @@
+ // Toast.makeText(context, "position : "+ position, Toast.LENGTH_SHORT).show();
+                   // RecyclerView mRecyclerView = Transfer.getMrecyclerView();
+                    View firstView = mRecyclerView.getChildAt(0);
+                    //int toY = firstView.getTop(); //to set bottom position
+                    int firstPosition = mRecyclerView.getChildAdapterPosition(firstView); //to set from top of the view
+                    View thisView = mRecyclerView.getChildAt(position - firstPosition);
+                    int fromY = thisView.getTop();
+                   // mRecyclerView.smoothScrollBy(0, fromY - toY);
+                    mRecyclerView.smoothScrollBy(0, fromY);
