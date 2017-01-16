@@ -1,0 +1,62 @@
+#Open Default WebBrowser in android
+#Open WebBrowser in Same Activity
+
+#Chrome custom tabs:
+====================
+#The first step is adding the Custom Tabs Support Library to your build.gradle file:
+-------------------------------------------------------------------------------------
+dependencies {
+    ...
+    compile 'com.android.support:customtabs:24.2.0'
+}
+# And then, to open a chrome custom tab:
+-------------------------------------------------------------------------------------
+String url = ¨https://www.google.pt/¨;
+CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
+CustomTabsIntent customTabsIntent = builder.build();
+customTabsIntent.launchUrl(this, Uri.parse(url));
+
+For more info: https://developer.chrome.com/multidevice/android/customtabs
+-------------------------------------------------------------------------------------
+
+#If you want to show user a dialogue with all browser list, so he can choose preferred, here is sample code:
+============================================================================================================
+private static final String HTTPS = "https://";
+private static final String HTTP = "http://";
+
+public static void openBrowser(final Context context, String url) {
+
+     if (!url.startsWith(HTTP) && !url.startsWith(HTTPS)) {
+            url = HTTP + url;
+     }
+
+     Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+     context.startActivity(Intent.createChooser(intent, "Choose browser"));// Choose browser is arbitrary :)
+
+}
+-------------------------------------------------------------------------------------
+
+
+#Open in WebBrowser 
+====================
+Uri uri = Uri.parse("https://www.google.com");
+                startActivity(new Intent(Intent.ACTION_VIEW, uri));
+#if you want then web browser open in your activity then do like this:
+-------------------------------------------------------------------------------------
+WebView webView = (WebView) findViewById(R.id.webView1);
+WebSettings settings = webview.getSettings();
+settings.setJavaScriptEnabled(true);
+webView.loadUrl(URL);
+
+#if you want to use zoom control in your browser then you can use:
+-------------------------------------------------------------------------------------
+settings.setSupportZoom(true);
+settings.setBuiltInZoomControls(true);
+
+
+#In case if you wish the app you start to open in a new task, indepandant of your own, instead of staying on the same stack, you can use this code:
+===================================================================================================================================================
+final Intent intent=new Intent(Intent.ACTION_VIEW,Uri.parse(url));
+intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY|Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
+intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+startActivity(intent);
