@@ -11,7 +11,7 @@ dependencies {
 }
 # And then, to open a chrome custom tab:
 -------------------------------------------------------------------------------------
-String url = ¨https://www.google.pt/¨;
+String url ="https://www.google.co.in";
 CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
 CustomTabsIntent customTabsIntent = builder.build();
 customTabsIntent.launchUrl(this, Uri.parse(url));
