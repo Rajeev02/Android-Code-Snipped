@@ -1,0 +1,14 @@
+in manifest 
+
+<activity android:name=".PlayerActivity" 
+  android:configChanges="orientation|screenSize" />
+  
+  
+  Inside PlayerActivity
+  
+  @Override
+public void onConfigurationChanged(Configuration newConfig) {
+    super.onConfigurationChanged(newConfig);
+}
+  
+  
