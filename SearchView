@@ -1,0 +1,387 @@
+http://abhiandroid.com/ui/searchview
+
+SearchView Tutorial With Example In Android Studio
+In Android, SearchView widget provide search user interface where users can enter a search query and then submit a request to search provider. It shows a list of query suggestions or results if available and allow the users to pick a suggestion or result to launch into.
+
+SearchView in Android
+
+Basic SearchView code in XML:
+
+<SearchView
+android:id="@+id/simpleSearchView"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content" />
+Table Of Contents [hide]
+0.0.1 SearchView Methods In Android:
+0.0.2 Attributes of SearchView:
+0.0.3 SearchView Example In Android Studio:
+1 SignUp! To Download SearchView Example Source Code
+SearchView Methods In Android:
+
+Let’s we discuss some important methods of search view that may be called in order to manage the search view.
+
+1. getQuery(): This function is used to get the query string currently in the text field of a search view. This method returns CharSequence type value.
+
+Below we get the query String from a search view.
+
+SearchView simpleSearchView = (SearchView) findViewById(R.id.simpleSearchView); // inititate a search view
+CharSequence query = simpleSearchView.getQuery(); // get the query string currently in the text field
+2. getQueryHint(): This function is used for getting the hint text that will be displayed in the query text field. This method returns a CharSequence type value.
+
+Below is an example code which get the hint text that will be displayed in the query text field of a search view.
+
+SearchView simpleSearchView = (SearchView) findViewById(R.id.simpleSearchView); // inititate a search view
+CharSequence queryHint = simpleSearchView.getQueryHint(); // get the hint text that will be displayed in the query text field
+3. isIconfiedByDefault(): This method returns the default iconified state of the search field. This method returns a Boolean value either true or false.
+
+Below we get the default state of the search field.
+
+SearchView simpleSearchView = (SearchView) findViewById(R.id.simpleSearchView); // inititate a search view
+boolean isIconfied=simpleSearchView.isIconfiedByDefault(); // checks default iconified state of the search field
+4. setIconifiedByDefault(Boolean iconify): This method is used to set the default or resting state of the search field. In this method we set Boolean value true or false.
+
+Important Note: When a SearchView is used in an Action Bar as an action view for collapsible menu item then it needs to be set to iconified by default using setIconfiedByDefault(true) function. If you want the search field to always be visible, then call setIconifiedByDefault(false). true is the default value for this function. You can also set iconfied from xml by using  iconfiedByDefault property to true or false.
+
+Below we set the iconified by default value to false .
+
+SearchView simpleSearchView = (SearchView) findViewById(R.id.simpleSearchView); // inititate a search view
+simpleSearchView.setIconifiedByDefault(false);  // set the default or resting state of the search field
+5. setQueryHint(CharSequence hint): This method is used to set the hint text to display in the query text field. This method support CharSequence type value.
+
+Below we set the query hint for a SearchView.
+
+SearchView simpleSearchView = (SearchView) findViewById(R.id.simpleSearchView); // inititate a search view
+simpleSearchView.setQueryHint("Search View"); // set the hint text to display in the query text field
+6. setOnQueryTextFocusChangeListener(OnFocusChangeListenerlistener): This listener inform when the focus of the query text field changes.
+
+In the below code we show the use of setOnQueryTextFocusChangeListener() of SearchView.
+
+SearchView simpleSearchView = (SearchView) findViewById(R.id.simpleSearchView); // inititate a search view
+
+// perform set on query text focus change listener event
+simpleSearchView.setOnQueryTextFocusChangeListener(new View.OnFocusChangeListener() {
+@Override
+public void onFocusChange(View v, boolean hasFocus) {
+// do something when the focus of the query text field changes
+}
+});
+7. setOnQueryTextListener(OnQueryTextListenerlistener): It is a user action within the SearchView.
+
+Below we show the use of setOnQueryTextListener() of search view.
+
+SearchView simpleSearchView = (SearchView) findViewById(R.id.simpleSearchView); // inititate a search view
+
+// perform set on query text listener event
+simpleSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+@Override
+public boolean onQueryTextSubmit(String query) {
+// do something on text submit
+return false;
+}
+
+@Override
+public boolean onQueryTextChange(String newText) {
+// do something when text changes
+return false;
+}
+});
+Attributes of SearchView:
+
+Now let’s we discuss some common attributes of a searchview that helps us to configure it in our layout (xml).
+
+1. Id: id attribute is used to uniquely identify a search view.
+
+<!--  id of an search view used to uniquely identify it -->
+<SearchView
+android:id="@+id/simpleSearchView"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content" />
+2. queryHint: This attribute ia used to set optional query hint string which will be displayed in the empty query field. Query hint is same as hint attribute for edittext.
+
+Below we set the query hint of an search view.
+
+<SearchView
+    android:id="@+id/simpleSearchView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:iconifiedByDefault="false"
+    android:queryHint="Search Here" /><!-- set query string of an search view -->
+queryHint in SearchView Android
+
+3. iconifiedByDefault: This attribute of searchview is used to set the default or resting state of the search field. You can set a Boolean value for this attribute and default value is true. True value indicates you can iconifies or expands the search view.
+
+Below we set the false value for this attribute.
+
+<SearchView
+    android:id="@+id/simpleSearchView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:iconifiedByDefault="false"
+    android:queryHint="Search here"/> <!-- set iconified by default to false -->
+iconifiedByDefault in SearchView Android
+
+4. background: background attribute is used to set the background of a search view. You can set a color or a drawable in the background of a search view. You can also set the background color in java class.
+
+Below we set the red color for the background of a search view.
+
+<SearchView
+    android:id="@+id/simpleSearchView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:iconifiedByDefault="false"
+    android:queryHint="Search here"
+    android:background="#f00"/><!-- red color for the background of search view -->
+background in SearchView
+
+Setting background of SearchView In Java class:
+
+SearchView simpleSearchView=(SearchView)findViewById(R.id.simpleSearchView);
+simpleSearchView.setBackgroundColor(Color.RED);
+5. padding: padding attribute is used to set the padding from left, right, top or bottom.
+
+paddingRight: set the padding from the right side of the search view.
+
+paddingLeft: set the padding from the left side of the search view.
+
+paddingTop: set the padding from the top side of the search view.
+
+paddingBottom: set the padding from the bottom side of the search view
+
+Padding: set the padding from the all side’s of the search view.
+
+Below we set 40dp padding from all the sides of a search view.
+
+<SearchView
+    android:id="@+id/simpleSearchView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:iconifiedByDefault="false"
+    android:queryHint="Search View"
+    android:background="#f00"
+    android:padding="40dp"/> <!-- set 40 dp padding from all the sides of a search view -->
+padding in SearchView Android
+
+SearchView Example In Android Studio:
+
+In the below example of SearchView we display SearchView and ListView. In this we create an animal name list and then set the Adapter to fill the data in ListView. Finally we implement SearchView.OnQueryTextListener to filter the animal list according to search query.
+
+Below you can download complete SearchView Android Studio project code, see final output and step by step explanation of example:
+
+Download Code
+SearchView Example in Android Studio
+
+Step 1: Create a new project and name it SearchViewExample
+
+Step 2: Open res -> layout ->activity_main.xml (or) main.xml and add following code:
+
+In this step we open an xml file and add the code for displaying a SearchView and ListView by using its different attributes.
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <SearchView
+        android:id="@+id/search"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:iconifiedByDefault="false">
+
+        <requestFocus />
+    </SearchView>
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/search" />
+
+</RelativeLayout>
+Step 3: Open   src -> package -> MainActivity.java
+
+In this step we open MainActivity and add the code to initiate SearchView and ListView. In this we create an Animal name list and then set the adapter to fill the data in ListView. In this we also implement SearchView.OnQueryTextListener to filter the animal list according to search query.
+
+package example.abhiandroid.searchviewexample;
+
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.ListView;
+import android.widget.SearchView;
+
+import java.util.ArrayList;
+
+public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
+
+    // Declare Variables
+    ListView list;
+    ListViewAdapter adapter;
+    SearchView editsearch;
+    String[] animalNameList;
+    ArrayList<AnimalNames> arraylist = new ArrayList<AnimalNames>();
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // Generate sample data
+
+        animalNameList = new String[]{"Lion", "Tiger", "Dog",
+                "Cat", "Tortoise", "Rat", "Elephant", "Fox",
+                "Cow","Donkey","Monkey"};
+
+        // Locate the ListView in listview_main.xml
+        list = (ListView) findViewById(R.id.listview);
+
+        for (int i = 0; i < animalNameList.length; i++) {
+            AnimalNames animalNames = new AnimalNames(animalNameList[i]);
+            // Binds all strings into an array
+            arraylist.add(animalNames);
+        }
+
+        // Pass results to ListViewAdapter Class
+        adapter = new ListViewAdapter(this, arraylist);
+
+        // Binds the Adapter to the ListView
+        list.setAdapter(adapter);
+
+        // Locate the EditText in listview_main.xml
+        editsearch = (SearchView) findViewById(R.id.search);
+        editsearch.setOnQueryTextListener(this);
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        String text = newText;
+        adapter.filter(text);
+        return false;
+    }
+}
+Step 4: Now create New Class. Go to app -> java -> right click on package-> New -> Java Class and create ListViewAdapter.java and add following code. Here we extends BaseAdapter in ListViewAdapter class and then set the data in the ListView by using Modal class.
+
+package example.abhiandroid.searchviewexample;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.TextView;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+
+public class ListViewAdapter extends BaseAdapter {
+
+    // Declare Variables
+
+    Context mContext;
+    LayoutInflater inflater;
+    private List<AnimalNames> animalNamesList = null;
+    private ArrayList<AnimalNames> arraylist;
+
+    public ListViewAdapter(Context context, List<AnimalNames> animalNamesList) {
+        mContext = context;
+        this.animalNamesList = animalNamesList;
+        inflater = LayoutInflater.from(mContext);
+        this.arraylist = new ArrayList<AnimalNames>();
+        this.arraylist.addAll(animalNamesList);
+    }
+
+    public class ViewHolder {
+        TextView name;
+    }
+
+    @Override
+    public int getCount() {
+        return animalNamesList.size();
+    }
+
+    @Override
+    public AnimalNames getItem(int position) {
+        return animalNamesList.get(position);
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
+
+    public View getView(final int position, View view, ViewGroup parent) {
+        final ViewHolder holder;
+        if (view == null) {
+            holder = new ViewHolder();
+            view = inflater.inflate(R.layout.listview_item, null);
+            // Locate the TextViews in listview_item.xml
+            holder.name = (TextView) view.findViewById(R.id.name);
+            view.setTag(holder);
+        } else {
+            holder = (ViewHolder) view.getTag();
+        }
+        // Set the results into TextViews
+        holder.name.setText(animalNamesList.get(position).getAnimalName());
+        return view;
+    }
+
+    // Filter Class
+    public void filter(String charText) {
+        charText = charText.toLowerCase(Locale.getDefault());
+        animalNamesList.clear();
+        if (charText.length() == 0) {
+            animalNamesList.addAll(arraylist);
+        } else {
+            for (AnimalNames wp : arraylist) {
+                if (wp.getAnimalName().toLowerCase(Locale.getDefault()).contains(charText)) {
+                    animalNamesList.add(wp);
+                }
+            }
+        }
+        notifyDataSetChanged();
+    }
+
+}
+Step 5: Now Create new a new layout Activity. Go to res-> right click on layout -> New -> Activity -> Blank Activity and create list_view_items.xml and add following code. Here we are creating items view that will be displayed inside each row.
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="10dp">
+    
+    <TextView
+        android:id="@+id/nameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Animal : " />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/nameLabel" />
+    
+</RelativeLayout>
+Step 6: Now create New Class. Go to app -> java -> right click on package-> New -> Java Class and create AnimalNames.java and add following code. Here we have a constructor for setting the animal name and a function to get the animal name.
+
+package example.abhiandroid.searchviewexample;
+
+public class AnimalNames {
+    private String animalName;
+
+    public AnimalNames(String animalName) {
+        this.animalName = animalName;
+    }
+
+    public String getAnimalName() {
+        return this.animalName;
+    }
+
+}
+Output:
+
+Now run the App, you will see different Animal names listed. Now type first character of Animal that came to your mind in SearchView and you will the list is sorted.
+
