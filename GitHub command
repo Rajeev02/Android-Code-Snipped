@@ -1,0 +1,16 @@
+git init
+git remote
+
+git remote add origin git@bitbucket.org:…………..git
+
+
+
+git remote
+git status
+git add .
+git status
+git commit -m "place card version code 4"
+
+git push origin master
+git push origin master --force
+
