@@ -1,4 +1,4 @@
-Facebook : Never Expires Token
+    Facebook : Never Expires Token
 First we need to get the page id from page in about option (you should be admin for that page)
 Facebook Page ID : 461389030901130
 Create Facebook App :
@@ -48,5 +48,7 @@ https://developers.facebook.com/tools/debug/accesstoken
 paste permanent token for debug and check
 EAABjM4xjIawBAJwykztt1HVw4s02NDtlz05DZCZBx27jyPjXyyuPDx0ikLdEpRvguxJkRwI4Auif9MD6wD4UBz3l1ox70ZBIZAot0lsBZBdZArMnse5ajSFr3kLcXW7pUb07sEp9agNPO2HO7SZBy3eZBv4dZBbHOACdD6mRlmt57DgZDZD
 Follow these links for better understanding :
-https://www.youtube.com/watch?v=FtboHvg3HtY
-https://stackoverflow.com/…/facebook-permanent-pa…/28418469…
+
+  https://www.youtube.com/watch?v=FtboHvg3HtY
+
+  https://stackoverflow.com/questions/17197970/facebook-permanent-page-access-token/28418469#28418469
