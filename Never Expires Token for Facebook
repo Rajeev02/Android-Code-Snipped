@@ -1,0 +1,52 @@
+Facebook : Never Expires Token
+First we need to get the page id from page in about option (you should be admin for that page)
+Facebook Page ID : 461389030901130
+Create Facebook App :
+If you already have an app, skip this step
+https://developers.facebook.com/apps/
+create a new app
+name : testapp
+category : apps for pages
+Get User Short-Lived Access Token :
+https://developers.facebook.com/tools/explorer
+Go to the Graph API Explorer.
+Select the application you want to get the access token for (in the "Application" drop-down menu, not the "My Apps" menu).
+Click "Get Token" > "Get User Access Token".
+In the pop-up, under the "Extended Permissions" tab, check "manage_pages".
+Click "Get Access Token".
+select page name
+Grant access from a Facebook account that has access to manage the target page.
+Note that if this user loses access the final, never-expiring access token will likely stop working.
+Token that appears in the "Access Token" field is your short-lived access token.
+Short live access token : EAABjM4xjIawBAJYPdOgmgZCSO49SykmIamUtd9hf3jZA8okk18DguC95RZBEs08ZAD7PilyOiHgtJttZAMiCZB8al8NG6ZBPWuKLYENI5dwiDFUZC25CQkAAE0b657GBWIQyJjK5pgtXf5VZAWpx94YBzeF0PyIWW1ISVCoGv0R663KNxqr9B0amcL73kvS7sPYUvGSM6BHqKkQZDZD
+Generate Long-Lived Access Token :
+Following these instructions from the Facebook docs, make a GET request to
+https://graph.facebook.com/v2.8/oauth/access_token…
+entering in your app's ID and secret and the short-lived token generated in the previous step.
+goto dashboard for getting appid and secret code
+https://developers.facebook.com/…/109073049788844/dashboard/
+App ID : 109073049788844
+App Secret : 73f029698453cbc8d45c24a3693f06da
+https://graph.facebook.com/v2.8/oauth/access_token…
+paste url to browser and run
+now you will get long lived aceess token
+{"access_token":"EAABjM4xjIawBACXYFZCo3DUqaCjC6oEYBZChh4hTsjz4aXUBPfsZCNdLBq8WY9udylSpCLZCf1Qet9diA3ykPTJq3ZC610aUzjdJSGAMyZCAGXolLYrTitcDZCMJMfheyFnZAt3tO3BwZCgQhfPzvWLE4XhJ4ICvTVuZAV4xqGFKQHAQZDZD","token_type":"bearer","expires_in":5183999}
+long lived access token : EAABjM4xjIawBACXYFZCo3DUqaCjC6oEYBZChh4hTsjz4aXUBPfsZCNdLBq8WY9udylSpCLZCf1Qet9diA3ykPTJq3ZC610aUzjdJSGAMyZCAGXolLYrTitcDZCMJMfheyFnZAt3tO3BwZCgQhfPzvWLE4XhJ4ICvTVuZAV4xqGFKQHAQZDZD
+THE_ACCESS_TOKEN_PROVIDED_BY_GRAPH_EXPLORER = long lived access token
+Graph API explorer to make the queries
+https://graph.facebook.com/%7BpageId%7D…
+Access Token Debugger to get information about the access token.
+https://graph.facebook.com/461389030901130…
+{
+"access_token": "EAABjM4xjIawBAJwykztt1HVw4s02NDtlz05DZCZBx27jyPjXyyuPDx0ikLdEpRvguxJkRwI4Auif9MD6wD4UBz3l1ox70ZBIZAot0lsBZBdZArMnse5ajSFr3kLcXW7pUb07sEp9agNPO2HO7SZBy3eZBv4dZBbHOACdD6mRlmt57DgZDZD",
+"id": "461389030901130"
+}
+This is permanent Token :
+EAABjM4xjIawBAJwykztt1HVw4s02NDtlz05DZCZBx27jyPjXyyuPDx0ikLdEpRvguxJkRwI4Auif9MD6wD4UBz3l1ox70ZBIZAot0lsBZBdZArMnse5ajSFr3kLcXW7pUb07sEp9agNPO2HO7SZBy3eZBv4dZBbHOACdD6mRlmt57DgZDZD
+for check permanent token :
+https://developers.facebook.com/tools/debug/accesstoken
+paste permanent token for debug and check
+EAABjM4xjIawBAJwykztt1HVw4s02NDtlz05DZCZBx27jyPjXyyuPDx0ikLdEpRvguxJkRwI4Auif9MD6wD4UBz3l1ox70ZBIZAot0lsBZBdZArMnse5ajSFr3kLcXW7pUb07sEp9agNPO2HO7SZBy3eZBv4dZBbHOACdD6mRlmt57DgZDZD
+Follow these links for better understanding :
+https://www.youtube.com/watch?v=FtboHvg3HtY
+https://stackoverflow.com/…/facebook-permanent-pa…/28418469…
