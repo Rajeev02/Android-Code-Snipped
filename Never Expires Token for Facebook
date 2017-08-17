@@ -8,7 +8,7 @@ https://stackoverflow.com/questions/17197970/facebook-permanent-page-access-toke
 
 1. First we need to get the page id from page in about option  (you should be admin for that page)
 
- Facebook Page ID : 461389030901130
+ Facebook Page ID : XXXXXXXXX
 
  2.  Create Facebook App : 
 
@@ -44,7 +44,7 @@ https://stackoverflow.com/questions/17197970/facebook-permanent-page-access-toke
 
 > Token that appears in the "Access Token" field is your short-lived access token.
 
- >Short live access token : EAABjM4xjIawBAJYPdOgmgZCSO49SykmIamUtd9hf3jZA8okk18DguC95RZBEs08ZAD7PilyOiHgtJttZAMiCZB8al8NG6ZBPWuKLYENI5dwiDFUZC25CQkAAE0b657GBWIQyJjK5pgtXf5VZAWpx94YBzeF0PyIWW1ISVCoGv0R663KNxqr9B0amcL73kvS7sPYUvGSM6BHqKkQZDZD
+ >Short live access token : XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 5. Generate Long-Lived Access Token : 
 
@@ -61,15 +61,15 @@ https://graph.facebook.com/v2.8/oauth/access_token?grant_type=fb_exchange_token&
 
 > goto dashboard for getting appid and secret code
 
-> https://developers.facebook.com/apps/109073049788844/dashboard/
+> https://developers.facebook.com/apps/XXXXXXXXXXXXXXXX/dashboard/
 
-> App ID :  109073049788844
+> App ID :  XXXXXXXXXXXXXXXXXXXX
 
-> App Secret : 73f029698453cbc8d45c24a3693f06da
+> App Secret : XXXXXXXXXXXXXXXXXXX
 
 >
 
- https://graph.facebook.com/v2.8/oauth/access_token?grant_type=fb_exchange_token&client_id=109073049788844&client_secret=73f029698453cbc8d45c24a3693f06da&fb_exchange_token=EAABjM4xjIawBAJYPdOgmgZCSO49SykmIamUtd9hf3jZA8okk18DguC95RZBEs08ZAD7PilyOiHgtJttZAMiCZB8al8NG6ZBPWuKLYENI5dwiDFUZC25CQkAAE0b657GBWIQyJjK5pgtXf5VZAWpx94YBzeF0PyIWW1ISVCoGv0R663KNxqr9B0amcL73kvS7sPYUvGSM6BHqKkQZDZD
+ https://graph.facebook.com/v2.8/oauth/access_token?grant_type=fb_exchange_token&client_id=XXXXXXXXXXXXXX&client_secret=XXXXXXXXXXXXXXXXXXXXX&fb_exchange_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 
 
@@ -77,10 +77,10 @@ https://graph.facebook.com/v2.8/oauth/access_token?grant_type=fb_exchange_token&
 
 > now you will get long lived access token (60days)
 
- {"access_token":"EAABjM4xjIawBACXYFZCo3DUqaCjC6oEYBZChh4hTsjz4aXUBPfsZCNdLBq8WY9udylSpCLZCf1Qet9diA3ykPTJq3ZC610aUzjdJSGAMyZCAGXolLYrTitcDZCMJMfheyFnZAt3tO3BwZCgQhfPzvWLE4XhJ4ICvTVuZAV4xqGFKQHAQZDZD","token_type":"bearer","expires_in":5183999}
+ {"access_token":"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX","token_type":"bearer","expires_in":5183999}
 
 
-> long lived access token : EAABjM4xjIawBACXYFZCo3DUqaCjC6oEYBZChh4hTsjz4aXUBPfsZCNdLBq8WY9udylSpCLZCf1Qet9diA3ykPTJq3ZC610aUzjdJSGAMyZCAGXolLYrTitcDZCMJMfheyFnZAt3tO3BwZCgQhfPzvWLE4XhJ4ICvTVuZAV4xqGFKQHAQZDZD
+> long lived access token : XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 
 6. Graph API explorer to make the permanent token or never expires token for facebook page.
@@ -97,16 +97,16 @@ https://graph.facebook.com/{pageId}?fields=access_token&access_token=THE_ACCESS_
 > Access Token Debugger to get information about the access token.
 
 
-https://graph.facebook.com/461389030901130?fields=access_token&access_token=EAABjM4xjIawBACXYFZCo3DUqaCjC6oEYBZChh4hTsjz4aXUBPfsZCNdLBq8WY9udylSpCLZCf1Qet9diA3ykPTJq3ZC610aUzjdJSGAMyZCAGXolLYrTitcDZCMJMfheyFnZAt3tO3BwZCgQhfPzvWLE4XhJ4ICvTVuZAV4xqGFKQHAQZDZD
+https://graph.facebook.com/XXXXXXXX?fields=access_token&access_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 
 > result after run this query :
 
-  { "access_token": "EAABjM4xjIawBAJwykztt1HVw4s02NDtlz05DZCZBx27jyPjXyyuPDx0ikLdEpRvguxJkRwI4Auif9MD6wD4UBz3l1ox70ZBIZAot0lsBZBdZArMnse5ajSFr3kLcXW7pUb07sEp9agNPO2HO7SZBy3eZBv4dZBbHOACdD6mRlmt57DgZDZD", "id": "461389030901130"}
+  { "access_token": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX", "id": "XXXXXXXXXXXXXXX"}
 
 > This is permanent Token : 
 
- EAABjM4xjIawBAJwykztt1HVw4s02NDtlz05DZCZBx27jyPjXyyuPDx0ikLdEpRvguxJkRwI4Auif9MD6wD4UBz3l1ox70ZBIZAot0lsBZBdZArMnse5ajSFr3kLcXW7pUb07sEp9agNPO2HO7SZBy3eZBv4dZBbHOACdD6mRlmt57DgZDZD
+ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 7.  for check permanent token :
 
@@ -116,4 +116,4 @@ https://graph.facebook.com/461389030901130?fields=access_token&access_token=EAAB
 
 > paste permanent token for debug and check
 
- EAABjM4xjIawBAJwykztt1HVw4s02NDtlz05DZCZBx27jyPjXyyuPDx0ikLdEpRvguxJkRwI4Auif9MD6wD4UBz3l1ox70ZBIZAot0lsBZBdZArMnse5ajSFr3kLcXW7pUb07sEp9agNPO2HO7SZBy3eZBv4dZBbHOACdD6mRlmt57DgZDZD
+ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
