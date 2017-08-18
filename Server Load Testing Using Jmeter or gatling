@@ -12,3 +12,6 @@ Step 1: How we  Install and run Jmeter
 4. start jmeter
     1. Windows  : meter/bin -> jmeter.bat
     2. Mac : openterminal -> jmeter/bin -> sh jmeter.sh
+    
+    
+    http://gatling.io/docs/current/quickstart/
