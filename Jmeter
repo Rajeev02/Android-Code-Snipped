@@ -1,9 +1,10 @@
 Jmeter
-Step 1:How we  Install and run Jmeter
+Step 1:
+	How we  Install and run Jmeter
 
 1. Prerequest : Java (check java in your system   java -version)
 2. Download Jmeter 
-		Binaries  http://jmeter.apache.org/download_jmeter.cgi
+	Binaries  http://jmeter.apache.org/download_jmeter.cgi
 3. unzip meter at any location
 4. start jmeter
     1. Windows  : meter/bin -> jmeter.bat
