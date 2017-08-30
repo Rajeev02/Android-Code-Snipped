@@ -107,3 +107,23 @@ http://stackoverflow.com/questions/18672072/how-to-programmatically-create-the-l
                 intent.putExtras(bundle);
                 context.startActivity(intent);
  ------------------------------------------------------------------------------   
+ Send data using bundle
+  ------------------------------------------------------------------------------   
+   Bundle bundle = new Bundle();
+            bundle.putString("username", ""+mStatusTextView.getText().toString());
+            Intent intent = new Intent(FacebookLoginActivity.this, MainActivity.class);
+            intent.putExtras(bundle);
+            startActivity(intent);
+            
+           ------------------------------------------------------------------------------   
+
+       Receive data using bundle
+        ------------------------------------------------------------------------------   
+
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        if(!bundle.isEmpty()){
+            fbusername = bundle.getString("username");
+        }
+        ------------------------------------------------------------------------------   
+
