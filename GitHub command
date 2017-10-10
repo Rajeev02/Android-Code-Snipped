@@ -1,8 +1,19 @@
 git init
 git remote
 
-git remote add origin git@bitbucket.org:…………..git
+if remote is not set
+{
+ git remote set-url origin git@bitbucket.org:…………..git
+or
+git remote set-url origin https://…………..git
+}
+else{
 
+git remote add origin git@bitbucket.org:…………..git
+or
+git remote add origin https://…………..git
+
+}
 
 
 git remote
