@@ -1,0 +1,10 @@
+increse the capacity of import file 
+xampp->mysql->config->my.ini 
+myisam_sort_buffer_size = 50M
+
+than goto 
+
+using cmd 
+cd C:\xampp\mysql\bin
+
+mysql -u user -p database name(test) path (table.sql)
