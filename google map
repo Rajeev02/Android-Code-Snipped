@@ -1,5 +1,6 @@
 Select Current Place and Show Details on a Map
 
+
         java/packagename/MapsActivityCurrentPlace.java
 
                 package com.example.currentplacedetailsonmap;
