@@ -1,3 +1,6 @@
+<b>Select Current Place and Show Details on a Map<b>
+
+
 java/packagename/MapsActivityCurrentPlace.java
 
 package com.example.currentplacedetailsonmap;
@@ -708,4 +711,9 @@ app/gradle
     implementation 'com.google.android.gms:play-services-maps:11.8.0'
     implementation 'com.google.android.gms:play-services-location:11.8.0'
     implementation 'com.google.android.gms:play-services:11.8.0'
+    
+    
+    
+    Refrence: 
+    https://developers.google.com/maps/documentation/android-api/current-place-tutorial
  
