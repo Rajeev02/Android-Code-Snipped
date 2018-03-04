@@ -1,3 +1,20 @@
+inside layout/view 
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/big_progressbar"
+            android:indeterminateDrawable="@drawable/custom_progress_bar" />
+
+
+
+
+
+drawable/custom_progress_bar.xml
+
 <?xml version="1.0" encoding="utf-8"?>
 <rotate  xmlns:android="http://schemas.android.com/apk/res/android"
     android:duration="2000"
