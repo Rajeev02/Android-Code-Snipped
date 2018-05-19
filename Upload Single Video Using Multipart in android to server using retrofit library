@@ -1,0 +1,26 @@
+
+    private void callUploadSingleVideo(String realUri) {
+        File videoFIle = new File(String.valueOf(realUri));
+        RequestBody requestBody = RequestBody.create(MediaType.parse("multipart/form-data"),videoFIle);
+        MultipartBody.Part video = MultipartBody.Part.createFormData("file", videoFIle.getName(),requestBody); //"image" is parameter for photo in API.
+        Call<ResponseLoadVideoToWildBook> call = api.loadvideoToWildBook(video, "testSanc", "testName", "testanimal", "testsortdesc","676767");
+        call.enqueue(new Callback<ResponseLoadVideoToWildBook>() {
+            @Override
+            public void onResponse(Call<ResponseLoadVideoToWildBook> call, Response<ResponseLoadVideoToWildBook> response) {
+                ResponseLoadVideoToWildBook body = response.body();
+                AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
+                alert.setMessage(body.getStatus()); //display response in Alert dialog.
+                alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                });
+                alert.show();
+            }
+            @Override
+            public void onFailure(Call<ResponseLoadVideoToWildBook> call, Throwable t) {
+                Toast.makeText(MainActivity.this, "Failed to upload Video "+t.getMessage(), Toast.LENGTH_SHORT).show();
+
+            }
+        });
+    }
