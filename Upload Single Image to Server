@@ -2,7 +2,7 @@ private void callUploadSingleImage(String realUri) {
         File imageFIle = new File(String.valueOf(realUri));
         RequestBody requestBody = RequestBody.create(MediaType.parse("multipart/form-data"),imageFIle);
         MultipartBody.Part image = MultipartBody.Part.createFormData("file1", imageFIle.getName(),requestBody);
-        Call<ResponseLoadimagesmultipleToWildBook> call = api.mLoadimageToWildBook(image, "testSanc", "testName", "testanimal", "testsortdesc","123456");
+        Call<ResponseLoadimagesmultipleToWildBook> call = api.mLoadimageToWildBook(image, "testSanc", "testName", "testanimal", "testsortdesc","6767676");
         call.enqueue(new Callback<ResponseLoadimagesmultipleToWildBook>() {
             @Override
             public void onResponse(Call<ResponseLoadimagesmultipleToWildBook> call, Response<ResponseLoadimagesmultipleToWildBook> response) {
