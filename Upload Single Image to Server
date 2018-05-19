@@ -1,0 +1,26 @@
+private void callUploadSingleImage(String realUri) {
+        File imageFIle = new File(String.valueOf(realUri));
+        RequestBody requestBody = RequestBody.create(MediaType.parse("multipart/form-data"),imageFIle);
+        MultipartBody.Part image = MultipartBody.Part.createFormData("file1", imageFIle.getName(),requestBody);
+        Call<ResponseLoadimagesmultipleToWildBook> call = api.mLoadimageToWildBook(image, "testSanc", "testName", "testanimal", "testsortdesc","123456");
+        call.enqueue(new Callback<ResponseLoadimagesmultipleToWildBook>() {
+            @Override
+            public void onResponse(Call<ResponseLoadimagesmultipleToWildBook> call, Response<ResponseLoadimagesmultipleToWildBook> response) {
+                ResponseLoadimagesmultipleToWildBook body = response.body();
+                AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
+                alert.setMessage(body.getStatus());
+                alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                });
+                alert.show();
+            }
+
+            @Override
+            public void onFailure(Call<ResponseLoadimagesmultipleToWildBook> call, Throwable t) {
+
+            }
+        });
+
+    }
