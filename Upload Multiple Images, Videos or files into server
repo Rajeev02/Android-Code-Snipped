@@ -1,0 +1,43 @@
+  private void callUploadImages(String[] realUri) {
+        MultipartBody.Part[] images;
+        RequestBody[] requestBody = new RequestBody[0];
+        File[] imageFIle = new File[0];
+        ArrayList<String> ImagefilePaths = new ArrayList<>(realUri.length);
+        imageFIle = new File[realUri.length];
+        requestBody = new RequestBody[realUri.length];
+        for(int i=0; i<realUri.length; i++) {
+            ImagefilePaths.add(realUri[i]);
+            imageFIle[i] = new File(String.valueOf(realUri[i]));
+            requestBody[i] = RequestBody.create(MediaType.parse("multipart/form-data"),imageFIle[i]);
+        }
+        images = new MultipartBody.Part[ImagefilePaths.size()];
+        for (int index = 0; index < ImagefilePaths.size(); index++) {
+            images[index] = MultipartBody.Part.createFormData("file"+(index+1), ImagefilePaths.get(index),requestBody[index]);
+         }
+         Call<ResponseLoadimagesmultipleToWildBook> call = api.mLoadimagesmultipleToWildBook(images, "testSanc", "testName", "testanimal", "testsortdesc","67767676"); 
+        call.enqueue(new Callback<ResponseLoadimagesmultipleToWildBook>() {
+            @Override
+            public void onResponse(Call<ResponseLoadimagesmultipleToWildBook> call, Response<ResponseLoadimagesmultipleToWildBook> response) {
+                ResponseLoadimagesmultipleToWildBook body = response.body(); //get body from response.
+               AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
+                alert.setMessage(body.getStatus()); //display response in Alert dialog.
+                alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        if(ISVIDEOFORUPLOAD) {
+                            callUploadSingleVideo(VideoForUpload);
+                        }
+
+                    }
+                });
+                alert.show();
+            }
+
+            @Override
+            public void onFailure(Call<ResponseLoadimagesmultipleToWildBook> call, Throwable t) {
+                Toast.makeText(MainActivity.this, "Failed "+t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
