@@ -1,0 +1,41 @@
+Programmatically set height and width of Relative and Linear Layout in android
+ 2 years ago  Android Layouts, Android Tutorials
+Are you faced to set height and width of Relative layout and Linear layout programmtically in android, here is the simple solution to set height and width of layouts.
+
+First, we have to get height and width of screen and then do these things
+ // getting screen size of mobile or tablet devices
+ Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        int width = size.x;
+        int height = size.y;
+Or
+
+      Display display = getWindowManager().getDefaultDisplay();
+      int width = display.getWidth();
+      int height = display.getHeight();
+
+Or
+
+     DisplayMetrics metrics = new DisplayMetrics();
+     getWindowManager().getDefaultDisplay().getMetrics(metrics);
+
+     metrics.heightPixels;
+     metrics.widthPixels;
+
+
+
+Linear Layout:
+--------------
+
+    final LinearLayout linearLeft = (LinearLayout) findViewById(R.id.left);
+    LayoutParams params = linearLeft .getLayoutParams();
+// Changes the height and width to the specified *pixels*
+    params.width = screenWidth / 2;
+  
+  
+Relative Layout
+---------------------
+    final RelativeLayout relavtiveLeft = (RelativeLayout) findViewById(R.id.right);
+    LayoutParams homeLayoutsparams = relavtiveLeft .getLayoutParams();
+    homeLayoutsparams.width = screenWidth / 2;
