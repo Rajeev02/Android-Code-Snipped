@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView app:cardCornerRadius="@dimen/activity_horizontal_margin"
+    app:cardElevation="@dimen/nav_header_vertical_spacing"
+    app:cardUseCompatPadding="true"
+    android:id="@+id/card_view"
+    android:layout_gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+           <android.support.v7.widget.CardView
+                android:id="@+id/card_ele"
+                app:cardBackgroundColor="@color/colorWhite"
+                app:cardElevation="0dp"
+                app:cardUseCompatPadding="false"
+                app:cardPreventCornerOverlap="false"
+                app:cardCornerRadius="@dimen/nav_header_vertical_spacing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop">-->
+                <ImageView
+                    android:scaleType="centerCrop"
+                    android:id="@+id/img"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:minHeight="220dp"/>
+
+            </android.support.v7.widget.CardView>
+
+
+            <TextView
+                android:layout_below="@+id/card_ele"
+                android:visibility="visible"
+                android:id="@+id/title"
+                android:padding="@dimen/activity_vertical_margin"
+                android:text="@string/qaforum"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:fontFamily="sans-serif"
+                android:layout_marginStart="5dp"
+                android:textSize="14sp"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_parks_bottom_toolbar_icon"
+                android:layout_below="@id/card_ele"
+                android:layout_marginRight="5dp"
+                android:layout_marginEnd="5dp"
+                android:contentDescription="FavButtonDesc" />
+
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
