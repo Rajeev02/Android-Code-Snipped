@@ -1,0 +1,14 @@
+int appVersionCode = BuildConfig.VERSION_CODE;
+        String appVersionName = BuildConfig.VERSION_NAME;
+        String manufacturer = Build.MANUFACTURER;
+        String model = Build.MODEL;
+        int version = Build.VERSION.SDK_INT;
+        String versionRelease = Build.VERSION.RELEASE;
+
+        Log.d("RequestAQuoteFragment", "manufacturer " + manufacturer
+                + " \n model " + model
+                + " \n version " + version
+                + " \n versionRelease " + versionRelease
+                +"\n appVersionCode : "+appVersionCode
+        +"\n appVersionName : "+appVersionName
+        );
