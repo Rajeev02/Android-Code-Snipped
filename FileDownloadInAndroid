@@ -1,0 +1,42 @@
+package com.india.wildtrails.home.downloader;
+
+import android.app.DownloadManager;
+import android.content.Context;
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.Environment;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.webkit.MimeTypeMap;
+import android.webkit.URLUtil;
+import android.widget.Button;
+
+import com.india.wildtrails.R;
+
+public class DownloadMangaerActivity extends AppCompatActivity {
+    DownloadManager downloadManager;
+    Button download;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main2);
+        download = findViewById(R.id.download);
+        final String fileUrl = "";
+        download.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                downloadManager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
+                Uri uri = Uri.parse(fileUrl);
+                DownloadManager.Request request = new DownloadManager.Request(uri);
+                request.setTitle("File download");
+                request.setDescription("File is being downloaded...");
+                request.allowScanningByMediaScanner();
+                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+                String nameOfFile = URLUtil.guessFileName(fileUrl, null, MimeTypeMap.getFileExtensionFromUrl(fileUrl));
+                request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, nameOfFile);
+                downloadManager.enqueue(request);
+            }
+        });
+    }
+}
