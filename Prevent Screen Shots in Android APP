@@ -1,0 +1,39 @@
+Prevent Screen Shot Using FLAG_SECURE
+
+public class FlagSecureTestActivity extends Activity {
+  @Override
+  public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+
+    getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE,
+                         WindowManager.LayoutParams.FLAG_SECURE);
+
+    setContentView(R.layout.main);
+  }
+}
+
+
+Try FLAG_SECURE:
+
+public class FlagSecureTestActivity extends Activity {
+  @Override
+  public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+
+    getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE,
+                         WindowManager.LayoutParams.FLAG_SECURE);
+
+    setContentView(R.layout.main);
+  }
+}
+This definitely secures against manual screenshots and automatic screenshots from the ICS recent-tasks history. It also secures against screen recording (e.g., apps using the media projection APIs).
+
+UPDATE: it also secures against Now On Tap or other assistants on Android 6.0; they will not get access to the details of widgets and containers in your UI if the user brings up the assistant.
+
+UPDATE #2: however, not everything in the activity will be protected. Any pop-up windows — Dialog, Spinner, AutoCompleteTextView, action bar overflow, etc. — will be insecure. You can fix the Dialog problem by calling getWindow() on it and setting FLAG_SECURE. The rest... gets tricky. See this blog post for more.
+
+
+
+refrence 
+
+https://stackoverflow.com/questions/9822076/how-do-i-prevent-android-taking-a-screenshot-when-my-app-goes-to-the-background/9822607#9822607
