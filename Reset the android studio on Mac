@@ -1,0 +1,20 @@
+Reset the android studio on Mac
+
+On Mac OS X
+Remove these directories:
+~/Library/Application Support/AndroidStudioBeta  
+~/Library/Caches/AndroidStudioBeta
+~/Library/Logs/AndroidStudioBeta  
+~/Library/Preferences/AndroidStudioBeta
+
+
+
+
+
+
+
+rm -rfv ~/Library/Application\ Support/AndroidStudio*
+rm -rfv ~/Library/Preferences/AndroidStudio*
+rm -rfv ~/Library/Caches/AndroidStudio*
+rm -rfv ~/Library/Logs/AndroidStudio*
+rm -rfv ~/.AndroidStudio*
