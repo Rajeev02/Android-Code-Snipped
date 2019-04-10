@@ -1,0 +1,61 @@
+TextView textview_date_name;
+CardView select_date_calendar;
+String DATE_FORMAT = "dd-MMM-yyyy";
+ 
+ textview_date_name = view.findViewById(R.id.textview_date_name);
+ select_date_calendar = view.findViewById(R.id.card_view_date);
+        
+
+onclick of view open calendar
+
+select_date_calendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogFragment newFragment = new DatePickerFragment();
+                newFragment.show(Objects.requireNonNull(getFragmentManager()), "datePicker");
+
+
+            }
+        });
+
+//initialize calendar date
+        initializeCalendar();
+
+
+
+
+ private void initializeCalendar() {
+        Calendar checkInCalender = Calendar.getInstance();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(DATE_FORMAT, Locale.ENGLISH);
+        String selectedDate = simpleDateFormat.format(checkInCalender.getTime());
+        textview_date_name.setText("" + selectedDate);
+    }
+    
+    
+     public static class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener {
+
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            final Calendar c = Calendar.getInstance();
+            int year = c.get(Calendar.YEAR);
+            int month = c.get(Calendar.MONTH);
+            int day = c.get(Calendar.DAY_OF_MONTH);
+            DatePickerDialog dialog = new DatePickerDialog(getActivity(), this, year, month, day);
+            dialog.getDatePicker().setMaxDate(c.getTimeInMillis());
+            return dialog;
+        }
+
+        public void onDateSet(DatePicker view, int year, int month, int day) {
+            Calendar checkInCalender = Calendar.getInstance();
+            checkInCalender.set(year, month, day);
+
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat(DATE_FORMAT, Locale.ENGLISH);
+            String selectedDate = simpleDateFormat.format(checkInCalender.getTime());
+
+            textview_date_name.setText("" + selectedDate);
+
+            Calendar c = Calendar.getInstance();
+            c.setTimeInMillis(System.currentTimeMillis());
+            view.setMaxDate(c.getTimeInMillis());
+        }
+    }
