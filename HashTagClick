@@ -1,0 +1,32 @@
+ SpannableString tagSpan = new SpannableString(msgs.get(i).getText());
+                Matcher matcher = Pattern.compile("#([A-Za-z0-9_-]+)").matcher(tagSpan);
+
+                while (matcher.find()) {
+                    ClickableSpan clickSpan = new ClickableSpan() {
+                        @Override
+                        public void onClick(@NonNull View textView) {
+                            try {
+
+                                TextView tv = (TextView) textView;
+                                // TODO add check if tv.getText() instanceof Spanned
+                                Spanned s = (Spanned) tv.getText();
+                                int start = s.getSpanStart(this);
+                                int end = s.getSpanEnd(this);
+                                Toast.makeText(mContext, ""+s.subSequence(start, end), Toast.LENGTH_SHORT).show();
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            } 
+                        }
+                        @Override
+                        public void updateDrawState(@NonNull TextPaint paint) {
+                            super.updateDrawState(paint);
+                            paint.setUnderlineText(true); // set underline if you want to underline
+                            paint.setColor(Color.BLUE); // set the color to blue
+                        }
+                    };
+                    tagSpan.setSpan(clickSpan, matcher.start(), matcher.end(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                }
+                viewHolder.textViewOthersMsg.setText(tagSpan);
+                viewHolder.textViewOthersMsg.setMovementMethod(LinkMovementMethod.getInstance());
+            }
