@@ -1,0 +1,10 @@
+ @GET("users/?per_page=12&amp;page=1")
+    Call<EmployeeDBResponse> getEmployees();
+
+or
+
+ @GET("users")
+    Call<EmployeeDBResponse>  getEmployees(
+            @Query("per_page") int totalPageItem,
+            @Query("page") int pageIndex
+    );
