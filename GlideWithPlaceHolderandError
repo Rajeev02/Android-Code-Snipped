@@ -1,0 +1,8 @@
+  Glide.with(context).load(result.getProfilepic())
+                                            .placeholder(R.drawable.ic_account_circle)
+                                            .error(R.drawable.ic_account_circle)
+                                            .diskCacheStrategy(DiskCacheStrategy.ALL)
+                                            .priority(Priority.HIGH)
+                                            .apply(RequestOptions.circleCropTransform()).into(viewHolder.profileimg);
+
+                               
