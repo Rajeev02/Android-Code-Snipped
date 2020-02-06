@@ -1,0 +1,129 @@
+{
+  "success": true,
+  "deals": {
+    "open_deals": [
+      {
+        "startup_id": 9252,
+        "name": "CarDekho",
+        "logo": "https://disfold.com/wp-content/uploads/2019/07/cardekho-logo.jpg",
+        "startup_permalink": "testingfounder",
+        "private": false,
+        "committed_at": 1569406771,
+        "commitment_amount": "₹13.0 Lakhs",
+        "investment_type": "Direct"
+      },
+      {
+        "startup_id": 9231,
+        "name": "Rivigo",
+        "logo": "https://disfold.com/wp-content/uploads/2019/07/rivigo-logo.jpg",
+        "startup_permalink": "fghjksasa",
+        "private": false,
+        "committed_at": 1570952315,
+        "commitment_amount": "₹69.0 Lakhs",
+        "investment_type": "AIF"
+      },
+      {
+        "startup_id": 9230,
+        "name": "Udaan",
+        "logo": "https://disfold.com/wp-content/uploads/2019/07/udaan-logo.jpg",
+        "startup_permalink": "asdasdsads",
+        "private": false,
+        "committed_at": 1570952655,
+        "commitment_amount": "₹6.0 Lakhs",
+        "investment_type": "Direct"
+      },
+      {
+        "startup_id": 9253,
+        "name": "CureFit",
+        "logo": "https://disfold.com/wp-content/uploads/2019/07/curefit-logo.jpg",
+        "startup_permalink": "tommy",
+        "private": false,
+        "committed_at": 1570952920,
+        "commitment_amount": "₹6.0 Lakhs",
+        "investment_type": "AIF"
+      },
+      {
+        "startup_id": 9203,
+        "name": "Grofers",
+        "logo": "https://disfold.com/wp-content/uploads/2019/07/grofers-logo.jpg",
+        "startup_permalink": "hawahawai-com",
+        "private": false,
+        "committed_at": 1573023747,
+        "commitment_amount": "₹15.0 Lakhs",
+        "investment_type": "AIF"
+      },
+      {
+        "startup_id": 9245,
+        "name": "Paytm Mall",
+        "logo": "https://disfold.com/wp-content/uploads/2019/07/paytm-mall-logo.jpg",
+        "startup_permalink": "barfi",
+        "private": false,
+        "committed_at": 1573116265,
+        "commitment_amount": "₹8.9 Lakhs",
+        "investment_type": "AIF"
+      }
+    ],
+    "closed_deals": [
+      {
+        "startup_id": 9274,
+        "name": "Ola Cabs",
+        "logo": "https://disfold.com/wp-content/uploads/2019/07/ola-cabs-logo.jpg",
+        "startup_permalink": "testfounder",
+        "private": false,
+        "committed_at": 1568812904,
+        "commitment_amount": "₹13.5 Lakhs",
+        "investment_type": "AIF"
+      },
+      {
+        "startup_id": 8941,
+        "name": "OYO",
+        "logo": "https://disfold.com/wp-content/uploads/2019/07/oyo-logo.jpg",
+        "startup_permalink": "Numquam",
+        "private": false,
+        "committed_at": 1568969210,
+        "commitment_amount": "₹69.0 Lakhs",
+        "investment_type": "Direct"
+      },
+      {
+        "startup_id": 9263,
+        "name": "Swiggy",
+        "logo": "https://disfold.com/wp-content/uploads/2019/07/swiggy-logo.jpg",
+        "startup_permalink": "wqwqwq",
+        "private": false,
+        "committed_at": 1570952611,
+        "commitment_amount": "₹5.0 Lakhs",
+        "investment_type": "AIF"
+      },
+      {
+        "startup_id": 274,
+        "name": "BigBasket",
+        "logo": "https://disfold.com/wp-content/uploads/2019/07/bigbasket-logo.jpg",
+        "startup_permalink": "wyqodunekyfedy",
+        "private": false,
+        "committed_at": 1570952960,
+        "commitment_amount": "₹6.0 Lakhs",
+        "investment_type": "Direct"
+      },
+      {
+        "startup_id": 168,
+        "name": "BYJU’S",
+        "logo": "https://disfold.com/wp-content/uploads/2019/07/byjus-logo.jpg",
+        "startup_permalink": "strt18",
+        "private": false,
+        "committed_at": 1573633650,
+        "commitment_amount": "₹6.0 Lakhs",
+        "investment_type": "Direct"
+      },
+      {
+        "startup_id": 8776,
+        "name": "Delhivery",
+        "logo": "https://disfold.com/wp-content/uploads/2019/07/delhivery-logo.jpg",
+        "startup_permalink": "qwlogan-9",
+        "private": false,
+        "committed_at": 1578373307,
+        "commitment_amount": "₹25.5 Lakhs",
+        "investment_type": "AIF"
+      }
+    ]
+  }
+}
